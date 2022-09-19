@@ -16,7 +16,7 @@ const Home: React.FC<HomePageProps> = ({ programs }) => {
     return (
         <LayoutWrapper>
             <Box>
-                <Container>
+                <Container maxWidth="md">
                     <Typography variant="h3" gutterBottom>
                         끝내주는 타이틀
                     </Typography>
@@ -25,19 +25,21 @@ const Home: React.FC<HomePageProps> = ({ programs }) => {
                     </Typography>
                 </Container>
 
-                <Card sx={{ padding: 2, mt: 4, mb: 4 }}>
-                    <Stack spacing={2}>
-                        <ProgramCard
-                            name="프로그램 이름"
-                            imageURL="https://source.unsplash.com/collection/190327/400x300"
-                        />
-                        <ProgramCard
-                            name="프로그램 이름"
-                            imageURL="https://source.unsplash.com/collection/190727/400x300"
-                        />
-                        <ProgramCard name="프로그램 이름" imageURL="https://source.unsplash.com/random" />
-                    </Stack>
-                </Card>
+                <Box maxWidth="md" sx={{ margin: '0 auto' }}>
+                    <Card sx={{ padding: 2, mt: 4, mb: 4 }}>
+                        <Stack spacing={2}>
+                            <ProgramCard
+                                name="프로그램 이름"
+                                imageURL="https://source.unsplash.com/collection/190327/400x300"
+                            />
+                            <ProgramCard
+                                name="프로그램 이름"
+                                imageURL="https://source.unsplash.com/collection/190727/400x300"
+                            />
+                            <ProgramCard name="프로그램 이름" imageURL="https://source.unsplash.com/random" />
+                        </Stack>
+                    </Card>
+                </Box>
                 {/* <Promotional />
                 <div className="rounded-lg bg-white p-4 md:p-8">
                     <div className="flex flex-wrap justify-center md:justify-between">
