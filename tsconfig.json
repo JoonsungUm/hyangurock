@@ -17,13 +17,17 @@
         "paths": {
             "@components/*": ["src/components/*"],
             "@components": ["src/components"],
+            "@interfaces/*": ["src/interfaces/*"],
+            "@interfaces": ["src/interfaces"],
+            "@constants": ["src/constants"],
             "@contexts/*": ["src/contexts/*"],
             "@contexts": ["src/contexts"],
             "@styles/*": ["src/styles/*"],
             "@styles": ["src/styles"],
             "@public/*": ["public/*"],
             "@public": ["public"]
-        }
+        },
+        "incremental": true
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
     "exclude": ["node_modules"]
