@@ -1,3 +1,7 @@
 export interface IProgram {
-    name: string
+    id: string
+    title: string
+    description: string
+    createdAt: Date
+    updatedAt: Date
 }

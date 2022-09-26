@@ -1,20 +1,26 @@
 import { GetServerSideProps } from 'next'
-import { LayoutWrapper, useTranslate } from '@pankod/refine-core'
+
+import { LayoutWrapper } from '@pankod/refine-core'
 import dataProvider from '@pankod/refine-airtable'
 // export { NextRouteComponent as default } from '@pankod/refine-nextjs-router'
 
 import { IProgram } from '@interfaces'
 import { AIRTABLE_API_TOKEN, AIRTABLE_BASE_ID } from '@constants'
-import { Box, Card, CardMedia, Container, Stack, Typography } from '@mui/material'
+import { Box, Card, Container, Stack, styled, Typography } from '@mui/material'
 import { ProgramCard } from '@components/programCard'
 
 type HomePageProps = {
     programs: IProgram[]
 }
 
+const Offset = styled('div')(({ theme }) => theme.mixins.toolbar)
+
 const Home: React.FC<HomePageProps> = ({ programs }) => {
+    console.log(programs)
     return (
         <LayoutWrapper>
+            <Offset />
+            <Offset />
             <Box>
                 <Container maxWidth="md">
                     <Typography variant="h3" gutterBottom>
@@ -29,14 +35,18 @@ const Home: React.FC<HomePageProps> = ({ programs }) => {
                     <Card sx={{ padding: 2, mt: 4, mb: 4 }}>
                         <Stack spacing={2}>
                             <ProgramCard
-                                name="프로그램 이름"
+                                program={programs[0]}
                                 imageURL="https://source.unsplash.com/collection/190327/400x300"
                             />
+
                             <ProgramCard
-                                name="프로그램 이름"
+                                program={programs[1]}
                                 imageURL="https://source.unsplash.com/collection/190727/400x300"
                             />
-                            <ProgramCard name="프로그램 이름" imageURL="https://source.unsplash.com/random" />
+                            <ProgramCard
+                                program={programs[2]}
+                                imageURL="https://source.unsplash.com/random"
+                            />
                         </Stack>
                     </Card>
                 </Box>
@@ -100,6 +110,12 @@ export default Home
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const { data: programData } = await dataProvider(AIRTABLE_API_TOKEN, AIRTABLE_BASE_ID).getList({
         resource: 'programs',
+        sort: [
+            {
+                field: 'updatedAt',
+                order: 'asc',
+            },
+        ],
     })
 
     return {
