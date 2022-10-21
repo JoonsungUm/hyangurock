@@ -24,10 +24,19 @@ const Home: React.FC<HomePageProps> = ({ programs }) => {
             <Box>
                 <Container maxWidth="md">
                     <Typography variant="h3" gutterBottom>
-                        끝내주는 타이틀
+                        향유록, 다시 없을 지금을 향유해요
                     </Typography>
-                    <Typography variant="h5" gutterBottom color={'GrayText'}>
-                        어쩌구 저쩌구..
+                    <Typography
+                        variant="h5"
+                        gutterBottom
+                        color={'GrayText'}
+                        sx={{ wordBreak: 'break-word', whiteSpace: 'pre-wrap' }}
+                    >
+                        똑같은 일상을 아름답게 만들어 줄 취향 모임
+                        <br />
+                        누구나 열고 참여할 수 있는 원데이 클래스,
+                        <br />
+                        취향 모임 취향이 통하는 지역사람들과 교류하는 특별한 일상을 만들어 보세요!
                     </Typography>
                 </Container>
 

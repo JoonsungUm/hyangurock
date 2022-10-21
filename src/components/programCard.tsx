@@ -26,13 +26,16 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({ program, imageURL }) =
                     }}
                 />
                 <Typography
-                    variant="h3"
+                    variant="h4"
                     sx={{
                         position: 'absolute',
                         top: '50%',
                         left: '50%',
+                        width: '80%',
                         transform: 'translate(-50%, -50%)',
                         color: 'whitesmoke',
+                        wordBreak: 'keep-all',
+                        whiteSpace: 'pre-wrap',
                     }}
                 >
                     {title}

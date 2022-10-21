@@ -35,7 +35,12 @@ const ProgramPage: FC<ProgramPageProps> = ({ program }) => {
                 <Typography variant="h3" gutterBottom>
                     {title}
                 </Typography>
-                <Typography variant="h5" gutterBottom color={'GrayText'}>
+                <Typography
+                    variant="h5"
+                    gutterBottom
+                    color={'GrayText'}
+                    sx={{ wordBreak: 'break-word', whiteSpace: 'pre-wrap' }}
+                >
                     {description}
                 </Typography>
                 <Offset />
