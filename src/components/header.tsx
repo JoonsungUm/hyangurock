@@ -9,8 +9,8 @@ export const Header: React.FC = () => {
             <AppBar position="fixed">
                 <Toolbar>
                     <Link href="/">
-                        <Box sx={{ display: 'inherit' }}>
-                            <Image alt="logo" src="/logo.png" width={40} height={30} />
+                        <Box sx={{ display: 'contents' }}>
+                            <Image alt="logo" src="/logo_white.png" width={72} height={54} />
                             <Typography variant="h6" sx={{ ml: 2 }}>
                                 향유록
                             </Typography>
